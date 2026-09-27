@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kQe0MRa7n68=",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\YaEventService\\YaEventService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AB\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "C:\\Users\\AB\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512"
+  ],
+  "logs": []
+}

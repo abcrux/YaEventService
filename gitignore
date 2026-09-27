@@ -1,0 +1,9 @@
+# gitignore
+
+# Артефакты сборки
+[Bb]in/
+[Oo]bj/
+
+# Пакеты NuGet
+*.nupkg
+packages/
