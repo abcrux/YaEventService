@@ -29,7 +29,7 @@ public class EventsController : ControllerBase
     public ActionResult<List<EventResponse>> GetEvents()
     {
         var evts = _eventService.GetEvents();
-        var evtsResp = evts.Select(evt => evt.ToResponse()).ToList;
+        var evtsResp = evts.Select(evt => evt.ToResponse()).ToList();
         return Ok(evtsResp); //200
     }
 
@@ -55,7 +55,7 @@ public class EventsController : ControllerBase
     }
 
     // PUT /events/{id}
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id:int}")]
     public ActionResult<EventResponse> UpdateEvent(int id, [FromBody] EventRequest evtReq)
     {
         var evt = evtReq.ToDomain();
@@ -68,7 +68,7 @@ public class EventsController : ControllerBase
     }
 
     // DELETE /events/{id}
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id:int}")]
     public IActionResult DeleteEvent(int id)
     {
         var evtRemoved = _eventService.RemoveEvent(id);

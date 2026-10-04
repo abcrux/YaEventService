@@ -64,7 +64,7 @@ Content-Type: application/json
 
 {
   "title": "Спектакль",
-  "description": "Добавили описание"
+  "description": "Добавили описание",
   "startAt": "2026-10-05T19:00:00",
   "endAt": "2026-10-05T22:00:00"
 }
