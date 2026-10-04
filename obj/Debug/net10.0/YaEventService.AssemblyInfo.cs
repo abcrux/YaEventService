@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YaEventService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dede8d49114e2cab8ee73a44965cb711c76eea9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1205f8af3e1cb59471335bcd8e452fe31afb8945")]
 [assembly: System.Reflection.AssemblyProductAttribute("YaEventService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YaEventService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

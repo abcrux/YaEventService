@@ -1,6 +1,151 @@
-@YaEventService_HostAddress = http://localhost:5211
+@baseUrl = http://localhost:5211
 
-GET {{YaEventService_HostAddress}}/weatherforecast/
-Accept: application/json
+########################################
+# GET /events
+########################################
 
-###
+### Получить список событий
+GET {{baseUrl}}/events
+
+########################################
+# POST /events
+########################################
+
+### Создать событие 1
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Концерт",
+  "startAt": "2026-10-05T19:00:00",
+  "endAt": "2026-10-05T22:00:00"
+}
+
+### Создать событие 2
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Лекция",
+  "description": "Введение в С#",
+  "startAt": "2026-10-06T10:00:00",
+  "endAt": "2026-10-06T12:00:00"
+}
+
+### Создать событие 3
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Пикник",
+  "description": "Пикник на берегу озера",
+  "startAt": "2026-10-09T16:00:00",
+  "endAt": "2026-10-11T18:00:00"
+}
+
+
+########################################
+# GET /events/{id}
+########################################
+
+### Существующее событие — 200
+GET {{baseUrl}}/events/1
+
+### Несуществующее событие — 404
+GET {{baseUrl}}/events/9999
+
+########################################
+# PUT /events/{id}
+########################################
+
+### Обновить существующее — 200
+PUT {{baseUrl}}/events/1
+Content-Type: application/json
+
+{
+  "title": "Спектакль",
+  "description": "Добавили описание"
+  "startAt": "2026-10-05T19:00:00",
+  "endAt": "2026-10-05T22:00:00"
+}
+
+### Обновить несуществующее — 404
+PUT {{baseUrl}}/events/9999
+Content-Type: application/json
+
+{
+  "title": "Несуществующее",
+  "startAt": "2026-10-05T10:00:00",
+  "endAt": "2026-10-05T11:00:00"
+}
+
+########################################
+# DELETE /events/{id}
+########################################
+
+### Удалить существующее — 204
+DELETE {{baseUrl}}/events/1
+
+### Удалить несуществующее — 404
+DELETE {{baseUrl}}/events/9999
+
+########################################
+# Валидация — 400 Bad Request
+########################################
+
+### Пустой Title
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "",
+  "startAt": "2026-10-05T10:00:00",
+  "endAt": "2026-10-05T11:00:00"
+}
+
+### Отсутствует Title
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "startAt": "2026-10-05T10:00:00",
+  "endAt": "2026-10-05T11:00:00"
+}
+
+### EndAt раньше StartAt
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Неверные даты",
+  "startAt": "2026-10-05T11:00:00",
+  "endAt": "2026-10-05T10:00:00"
+}
+
+### EndAt равен StartAt
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Нулевое событие",
+  "startAt": "2026-10-05T10:00:00",
+  "endAt": "2026-10-05T10:00:00"
+}
+
+### Title длиннее 200 символов
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Очень длинное название события, которое точно превышает 200 символов и не должно пройти валидацию, которая происходит автоматически, т.к у полей есть атрибуты в квадратных скобках. Указываю очень длинный текст, чтобы добить длину до 200 символов",
+  "startAt": "2026-10-05T10:00:00",
+  "endAt": "2026-10-05T11:00:00"
+}
+
+### Невалидный JSON (синтаксис)
+POST {{baseUrl}}/events
+Content-Type: application/json
+
+{
+  "title": "Сломанный JSON"
+  "startAt": "2026-10-05T10:00:00",

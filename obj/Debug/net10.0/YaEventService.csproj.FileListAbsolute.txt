@@ -32,3 +32,6 @@ C:\Workspace\YaEventService\obj\Debug\net10.0\refint\YaEventService.dll
 C:\Workspace\YaEventService\obj\Debug\net10.0\YaEventService.pdb
 C:\Workspace\YaEventService\obj\Debug\net10.0\YaEventService.genruntimeconfig.cache
 C:\Workspace\YaEventService\obj\Debug\net10.0\ref\YaEventService.dll
+C:\Workspace\YaEventService\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Workspace\YaEventService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Workspace\YaEventService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
